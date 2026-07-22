@@ -1,8 +1,10 @@
 from flask import Flask, jsonify
+from prometheus_flask_exporter import PrometheusMetrics
 import random
 import time
 
 app = Flask(__name__)
+metrics = PrometheusMetrics(app)
 
 @app.route("/")
 def home():
